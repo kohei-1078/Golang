@@ -1,14 +1,37 @@
 package main
 
 import (
-	"fmt"
+	f"fmt"
 	"Golang_udemy/section8/foo"
 )
 
 // スコープ
 
+func appName() string {
+	const AppName = "GoApp"
+	var Version string = "1.0"
+	return AppName + " " + Version
+}
+
+func Do(s string) (b string) {
+	b = s
+	{
+		b := "BBBB"
+		f.Println(b)
+	}
+	f.Println(b)
+	return b
+}
+
 func main() {
-	fmr.Println(foo.Max)
+	f.Println(foo.Max)
+	// fmt.Println(foo.min)
+
+	f.Println(foo.ReturnMin())
+
+	f.Println(appName())
+	// f.Println(AppName, Version)
+	f.Println(Do("AAA"))
 }
 
 

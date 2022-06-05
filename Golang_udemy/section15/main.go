@@ -9,6 +9,8 @@ import (
 // os
 
 func main() {
+	var b []byte
+	fmt.Printf("%T\n", b)
 	// ファイル操作
 	// OpenFile
 	// O_RDONLY 読み込み専用

@@ -1,1 +1,11 @@
 2022/06/06 09:22:05 main.go:16: test
+2022/06/06 21:23:41 users.go:32: sql: converting argument $1 type: unsupported type func() uuid.UUID, a func
+2022/06/06 21:23:57 users.go:32: table users has no column named email
+2022/06/06 21:27:50 users.go:32: table users has no column named email
+2022/06/06 22:32:56 todos.go:23: NOT NULL constraint failed: todos.uuid
+2022/06/06 22:34:58 todos.go:23: NOT NULL constraint failed: todos.uuid
+2022/06/06 22:36:18 todos.go:23: NOT NULL constraint failed: todos.uuid
+2022/06/06 22:38:40 todos.go:23: NOT NULL constraint failed: todos.uuid
+2022/06/06 22:39:25 todos.go:23: NOT NULL constraint failed: todos.uuid
+2022/06/06 22:40:07 todos.go:23: NOT NULL constraint failed: todos.uuid
+2022/06/06 22:55:07 todos.go:37: no such column: created_at

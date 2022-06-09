@@ -12,3 +12,399 @@
 2022/06/07 23:49:46 todos.go:45: near "seletc": syntax error
 2022/06/07 23:50:05 todos.go:45: no such column: created_at
 2022/06/08 23:57:00 todos.go:67: near "from": syntax error
+2022/06/09 11:03:09 server.go:3197: http: panic serving [::1]:52363: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00019e000}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00019e000}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc00019e000?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00019e000}, 0xc000114100)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c36e0?}, {0x7ff7b0f9d010, 0xc00019e000}, 0xc000114100)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a3400, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:09 server.go:3197: http: panic serving [::1]:52364: runtime error: invalid memory address or nil pointer dereference
+goroutine 5 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00011e0e0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00011e0e0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc00011e0e0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00011e0e0}, 0xc000114200)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000200c0?}, {0x7ff7b0f9d010, 0xc00011e0e0}, 0xc000114200)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000062000, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:09 server.go:3197: http: panic serving [::1]:52365: runtime error: invalid memory address or nil pointer dereference
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc000074000}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc000074000}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc000074000?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc000074000}, 0xc00006a000)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020120?}, {0x7ff7b0f9d010, 0xc000074000}, 0xc00006a000)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a34a0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:10 server.go:3197: http: panic serving [::1]:52366: runtime error: invalid memory address or nil pointer dereference
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00019e0e0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00019e0e0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc00019e0e0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00019e0e0}, 0xc0001d4100)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001860f0?}, {0x7ff7b0f9d010, 0xc00019e0e0}, 0xc0001d4100)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000620a0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:10 server.go:3197: http: panic serving [::1]:52367: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00019e1c0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00019e1c0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc00019e1c0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00019e1c0}, 0xc00006a100)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000202d0?}, {0x7ff7b0f9d010, 0xc00019e1c0}, 0xc00006a100)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000282000, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:10 server.go:3197: http: panic serving [::1]:52368: runtime error: invalid memory address or nil pointer dereference
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc0000740e0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc0000740e0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc0000740e0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc0000740e0}, 0xc00006a200)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020330?}, {0x7ff7b0f9d010, 0xc0000740e0}, 0xc00006a200)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002820a0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:11 server.go:3197: http: panic serving [::1]:52369: runtime error: invalid memory address or nil pointer dereference
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00011e1c0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00011e1c0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc00011e1c0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00011e1c0}, 0xc000114300)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c3950?}, {0x7ff7b0f9d010, 0xc00011e1c0}, 0xc000114300)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000062140, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:11 server.go:3197: http: panic serving [::1]:52370: runtime error: invalid memory address or nil pointer dereference
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc0000741c0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc0000741c0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc0000741c0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc0000741c0}, 0xc000114400)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c39b0?}, {0x7ff7b0f9d010, 0xc0000741c0}, 0xc000114400)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000621e0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:11 server.go:3197: http: panic serving [::1]:52371: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00011e2a0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00011e2a0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc00011e2a0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00011e2a0}, 0xc000114600)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c3b00?}, {0x7ff7b0f9d010, 0xc00011e2a0}, 0xc000114600)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000062280, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:12 server.go:3197: http: panic serving [::1]:52372: runtime error: invalid memory address or nil pointer dereference
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00011e380}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00011e380}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc00011e380?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00011e380}, 0xc00006a500)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000206c0?}, {0x7ff7b0f9d010, 0xc00011e380}, 0xc00006a500)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a3540, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:12 server.go:3197: http: panic serving [::1]:52373: runtime error: invalid memory address or nil pointer dereference
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00011e460}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00011e460}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82f0d50?, {0x7ff7b0f9d010?, 0xc00011e460?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00011e460}, 0xc000114800)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c3c80?}, {0x7ff7b0f9d010, 0xc00011e460}, 0xc000114800)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000062320, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:12 server.go:3197: http: panic serving [::1]:52374: runtime error: invalid memory address or nil pointer dereference
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00019e2a0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00019e2a0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc00019e2a0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00019e2a0}, 0xc0001d4400)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186420?}, {0x7ff7b0f9d010, 0xc00019e2a0}, 0xc0001d4400)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a35e0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:12 server.go:3197: http: panic serving [::1]:52375: runtime error: invalid memory address or nil pointer dereference
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc0000742a0}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc0000742a0}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc0000742a0?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc0000742a0}, 0xc00006a600)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020780?}, {0x7ff7b0f9d010, 0xc0000742a0}, 0xc00006a600)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000282140, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:12 server.go:3197: http: panic serving [::1]:52376: runtime error: invalid memory address or nil pointer dereference
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc000074380}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc000074380}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc000074380?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc000074380}, 0xc0001d4600)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001865a0?}, {0x7ff7b0f9d010, 0xc000074380}, 0xc0001d4600)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000623c0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:12 server.go:3197: http: panic serving [::1]:52377: runtime error: invalid memory address or nil pointer dereference
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc00019e380}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc00019e380}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc00019e380?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc00019e380}, 0xc0001d4700)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186600?}, {0x7ff7b0f9d010, 0xc00019e380}, 0xc0001d4700)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000062460, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:17 server.go:3197: http: panic serving [::1]:52378: runtime error: invalid memory address or nil pointer dereference
+goroutine 42 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc000074460}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc000074460}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa6b8?, {0x7ff7b0f9d010?, 0xc000074460?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc000074460}, 0xc0001d4900)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186780?}, {0x7ff7b0f9d010, 0xc000074460}, 0xc0001d4900)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002821e0, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:17 server.go:3197: http: panic serving [::1]:52379: runtime error: invalid memory address or nil pointer dereference
+goroutine 43 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc000074540}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc000074540}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc000074540?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc000074540}, 0xc0001d4a00)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000186840?}, {0x7ff7b0f9d010, 0xc000074540}, 0xc0001d4a00)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000282280, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/09 11:03:17 server.go:3197: http: panic serving [::1]:52380: runtime error: invalid memory address or nil pointer dereference
+goroutine 53 [running]:
+net/http.(*conn).serve.func1()
+	C:/Users/toyam/go/src/net/http/server.go:1825 +0xbf
+panic({0x7ff7b0eb02a0, 0x7ff7b0e60e90})
+	C:/Users/toyam/go/src/runtime/panic.go:844 +0x258
+html/template.(*Template).escape(0x0)
+	C:/Users/toyam/go/src/html/template/template.go:97 +0x34
+html/template.(*Template).Execute(0x0, {0x7ff7b0f9b0e0, 0xc000074620}, {0x0, 0x0})
+	C:/Users/toyam/go/src/html/template/template.go:121 +0x32
+ToDo_app/app/controllers.top({0x7ff7b0f9d010?, 0xc000074620}, 0x0?)
+	C:/Users/toyam/go/src/ToDo_app/app/controllers/route_main.go:10 +0x89
+net/http.HandlerFunc.ServeHTTP(0x25ce82fa7a8?, {0x7ff7b0f9d010?, 0xc000074620?}, 0x7ff7b0a2e825?)
+	C:/Users/toyam/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7ff7b0f9d010, 0xc000074620}, 0xc00006a900)
+	C:/Users/toyam/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020c00?}, {0x7ff7b0f9d010, 0xc000074620}, 0xc00006a900)
+	C:/Users/toyam/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000062500, {0x7ff7b0f9d298, 0xc0000c35f0})
+	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db

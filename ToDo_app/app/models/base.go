@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"ToDo_App/config"
+	"ToDo_app/config"
 
 	"github.com/google/uuid"
 

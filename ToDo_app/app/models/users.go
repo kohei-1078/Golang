@@ -14,6 +14,11 @@ type User struct {
 	CreateAt time.Time
 }
 
+type Session struct {
+	ID int
+	UUID string
+}
+
 func (u *User) CreateUser() (err error) {
 	cmd := `insert into users (
 		uuid,

@@ -1134,3 +1134,10 @@ net/http.(*conn).serve(0xc0002ec140, {0x7ff7b0439798, 0xc0000c3620})
 	C:/Users/toyam/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Users/toyam/go/src/net/http/server.go:3071 +0x4db
+2022/06/13 15:59:02 route_main.go:25: near "id": syntax error
+2022/06/13 16:00:25 route_main.go:25: near "id": syntax error
+2022/06/13 16:00:40 route_main.go:25: near "id": syntax error
+2022/06/13 16:28:46 route_main.go:25: sql: expected 4 destination arguments in Scan, not 5
+2022/06/13 16:28:47 route_main.go:25: sql: expected 4 destination arguments in Scan, not 5
+2022/06/13 16:28:47 route_main.go:25: sql: expected 4 destination arguments in Scan, not 5
+2022/06/13 16:28:48 route_main.go:25: sql: expected 4 destination arguments in Scan, not 5

@@ -33,51 +33,249 @@ type value struct {
 	name string
 }
 
+var onceA, onceB sync.Once
+
+func A() {
+	fmt.Println("A")
+	onceB.Do(B)
+}
+
+func B() {
+	fmt.Println("B")
+	onceA.Do(A)
+}
+
+type Person struct {
+	Name string
+}
+
 func main() {
-	var count int 
-	var lock sync.RWMutex
+	count := 0
+	mypool := & sync.Pool{
+		New: func() interface{} {
+			count++
+			fmt.Println("Creating...")
+			return struct{}{}
+			// fmt.Println("Creating...")
+			// return new(Person)
+			// fmt.Println("Create new instance")
+			// return struct{}{}
+		},
+	}
+
+	mypool.Put("manualy added: 1")
+	mypool.Put("manualy added: 2")
+
 	var wg sync.WaitGroup
 
-	increment := func(wg *sync.WaitGroup, l sync.Locker) {
-		l.Lock()
-		defer l.Unlock()
-		defer wg.Done()
+	wg.Add(10000)
 
-		fmt.Println("increment")
-		count++
-		time.Sleep(1 * time.Second)
-	}
-
-	read := func(wg *sync.WaitGroup, l sync.Locker) {
-		l.Lock()
-		defer l.Unlock()
-		defer wg.Done()
-
-		fmt.Println("read")
-		fmt.Println(count)
-		time.Sleep(1 * time.Second)
-	}
-
-	start := time.Now()
-
-	for i := 0; i < 5; i++ {
-		wg.Add(1)
-
-		go increment(&wg, &lock)
-	}
-
-
-	for i := 0; i < 5; i++ {
-		wg.Add(1)
-
-		go read(&wg, lock.RLocker())
+	for i := 0; i < 10000; i++ {
+		time.Sleep(1 * time.Millisecond)
+		go func() {
+			defer wg.Done()
+			instance := mypool.Get()
+			mypool.Put(instance)
+		}()
 	}
 
 	wg.Wait()
 
-	end := time.Now()
+	fmt.Printf("created instance: %d", count)
 
-	fmt.Println(end.Sub(start))
+
+
+	// mypool.Put(&Person{Name: "1"})
+	// mypool.Put(&Person{Name: "2"})
+
+	// instance1 := mypool.Get()
+	// instance2 := mypool.Get()
+	// instance3 := mypool.Get().(*Person)
+
+	// fmt.Println(instance1, instance2, instance3)
+
+	// instance3.Name = "3"
+
+	// fmt.Println(instance1, instance2, instance3)
+
+	// mypool.Put(instance1)
+	// mypool.Put(instance2)
+	// mypool.Put(instance3)
+
+	// instnace4 := mypool.Get()
+	// fmt.Println(instnace4)
+
+	// instance := mypool.Get()
+	// mypool.Put(instance)
+	// mypool.Get()
+
+	// onceA.Do(A)
+
+	// count := 0
+
+	// increment := func() {
+	// 	count++
+	// }
+
+	// decrement := func() {
+	// 	count--
+	// }
+
+	// var once sync.Once
+	
+	// once.Do(increment)
+	// once.Do(decrement)
+
+	// fmt.Println(count)
+
+
+	// cond := sync.NewCond(&sync.Mutex{})
+
+	// go func() {
+	// 	for range time.Tick(1 * time.Second) {
+	// 		cond.Broadcast()
+	// 	}
+	// }()
+
+	// var flag [2]bool
+
+	// takeStep := func() {
+	// 	cond.L.Lock()
+	// 	cond.Wait()
+	// 	cond.L.Unlock()
+	// }
+
+	// var wg sync.WaitGroup
+
+	// p0 := func() {
+	// 	defer wg.Done()
+
+	// 	flag[0] = true
+
+	// 	takeStep()
+
+	// 	for flag[1] {
+	// 		takeStep()
+
+	// 		flag[0] = false
+
+	// 		takeStep()
+
+	// 		if flag[0] != flag[1] {
+	// 			break
+	// 		}
+
+	// 		takeStep()
+
+	// 		flag[0] = true
+
+	// 		takeStep()
+	// 	}
+	// }
+
+	// p1 := func() {
+	// 	defer wg.Done()
+
+	// 	flag[1] = true
+
+	// 	takeStep()
+
+	// 	for flag[1] {
+	// 		takeStep()
+
+	// 		flag[1] = false
+
+	// 		takeStep()
+
+	// 		if flag[1] != flag[1] {
+	// 			break
+	// 		}
+
+	// 		takeStep()
+
+	// 		flag[1] = true
+
+	// 		takeStep()
+	// 	}
+	// }
+
+	// wg.Add(2)
+
+	// go p0()
+	// go p1()
+
+	// wg.Wait()
+
+	// var mutex sync.Mutex
+	// cond := sync.NewCond(&mutex)
+
+	// for _, name := range []string{"A","B","C"} {
+	// 	go func(name string) {
+	// 		mutex.Lock()
+	// 		defer mutex.Unlock()
+
+	// 		cond.Wait()
+	// 		fmt.Println(name)
+	// 	}(name)
+	// }
+
+	// fmt.Println("Ready...")
+	// time.Sleep(time.Second)
+	// fmt.Println("Go!")
+	// for i := 0; i < 3; i++ {
+	// 	time.Sleep(time.Second)
+	// 	cond.Signal()
+	// }
+	// cond.Broadcast()
+
+	// time.Sleep(time.Second)
+
+	// fmt.Println("Done")
+
+	// var count int 
+	// var lock sync.RWMutex
+	// var wg sync.WaitGroup
+
+	// increment := func(wg *sync.WaitGroup, l sync.Locker) {
+	// 	l.Lock()
+	// 	defer l.Unlock()
+	// 	defer wg.Done()
+
+	// 	fmt.Println("increment")
+	// 	count++
+	// 	time.Sleep(1 * time.Second)
+	// }
+
+	// read := func(wg *sync.WaitGroup, l sync.Locker) {
+	// 	l.Lock()
+	// 	defer l.Unlock()
+	// 	defer wg.Done()
+
+	// 	fmt.Println("read")
+	// 	fmt.Println(count)
+	// 	time.Sleep(1 * time.Second)
+	// }
+
+	// start := time.Now()
+
+	// for i := 0; i < 5; i++ {
+	// 	wg.Add(1)
+
+	// 	go increment(&wg, &lock)
+	// }
+
+
+	// for i := 0; i < 5; i++ {
+	// 	wg.Add(1)
+
+	// 	go read(&wg, lock.RLocker())
+	// }
+
+	// wg.Wait()
+
+	// end := time.Now()
+
+	// fmt.Println(end.Sub(start))
 
 	// var wg sync.WaitGroup
 	// var lock sync.Mutex

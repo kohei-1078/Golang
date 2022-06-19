@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
-	"time"
+	// "time"
 	"runtime"
 )
 
@@ -50,38 +50,40 @@ type Person struct {
 }
 
 func main() {
-	count := 0
-	mypool := & sync.Pool{
-		New: func() interface{} {
-			count++
-			fmt.Println("Creating...")
-			return struct{}{}
-			// fmt.Println("Creating...")
-			// return new(Person)
-			// fmt.Println("Create new instance")
-			// return struct{}{}
-		},
-	}
+	
 
-	mypool.Put("manualy added: 1")
-	mypool.Put("manualy added: 2")
+	// count := 0
+	// mypool := & sync.Pool{
+	// 	New: func() interface{} {
+	// 		count++
+	// 		fmt.Println("Creating...")
+	// 		return struct{}{}
+	// 		// fmt.Println("Creating...")
+	// 		// return new(Person)
+	// 		// fmt.Println("Create new instance")
+	// 		// return struct{}{}
+	// 	},
+	// }
 
-	var wg sync.WaitGroup
+	// mypool.Put("manualy added: 1")
+	// mypool.Put("manualy added: 2")
 
-	wg.Add(10000)
+	// var wg sync.WaitGroup
 
-	for i := 0; i < 10000; i++ {
-		time.Sleep(1 * time.Millisecond)
-		go func() {
-			defer wg.Done()
-			instance := mypool.Get()
-			mypool.Put(instance)
-		}()
-	}
+	// wg.Add(10000)
 
-	wg.Wait()
+	// for i := 0; i < 10000; i++ {
+	// 	time.Sleep(1 * time.Millisecond)
+	// 	go func() {
+	// 		defer wg.Done()
+	// 		instance := mypool.Get()
+	// 		mypool.Put(instance)
+	// 	}()
+	// }
 
-	fmt.Printf("created instance: %d", count)
+	// wg.Wait()
+
+	// fmt.Printf("created instance: %d", count)
 
 
 

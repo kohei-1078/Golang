@@ -1,6 +1,7 @@
 package main
 
 import (
+	// "sync/atomic"
 	"fmt"
 	"sync"
 	// "time"
@@ -51,35 +52,215 @@ type Person struct {
 }
 
 func main() {
-	smap := &sync.Map{}
+	var ch <-chan int
 
-	smap.Store("Hello", "World")
-	smap.Store(1, 2)
-
-	smap.Range(func(key, value interface{}) bool{
-		fmt.Println(key, value)
-		return true
-	})
-
-	smap.Delete(1)
-
-	smap.Range(func(key, value interface{}) bool{
-		fmt.Println(key, value)
-		return true
-	})
-	
-	v, ok := smap.Load("Hello")
-	if ok {
-		fmt.Println(v)
+	select {
+	case <-ch:
+	default:
+		fmt.Println("Default")
 	}
 
-	smap.LoadOrStore("Hello", "Woooooorld")
-	smap.LoadOrStore(2, 3)
+	// start := time.Now()
+	// ch1 := make(chan int)
+	// ch2 := make(chan int)
 
-	smap.Range(func(key, value interface{}) bool{
-		fmt.Println(key, value)
-		return true
-	})
+	// done := make(chan interface{})
+
+	// go func() {
+	// 	time.Sleep(2 * time.Second)
+	// 	close(done)
+	// }()
+
+	// go func() {
+	// 	defer close(ch1)
+	// 	for i := 0; i < 10; i++ {
+	// 		time.Sleep(time.Second)
+	// 		ch1 <- i
+	// 	}
+	// }()
+
+	// go func() {
+	// 	defer close(ch2)
+	// 	for i := 0; i < 10; i++ {
+	// 		time.Sleep(time.Second)
+	// 		ch2 <- i
+	// 	}
+	// }()
+
+	// loop:
+	// for {
+	// 	select{
+	// 	case <- done:
+	// 		break loop
+	// 	case <-time.After(1 * time.Second):
+	// 		break loop
+	// 	case v, ok := <-ch1:
+	// 		if !ok {
+	// 			break loop
+	// 		}
+	// 		fmt.Printf("ch1: %v\n", v)
+	// 	case v, ok := <-ch2:
+	// 		if !ok {
+	// 			break loop
+	// 		}
+	// 		fmt.Printf("ch2: %v\n", v)
+	// 	}
+	// }
+
+	// end := time.Now()
+	// fmt.Println(end.Sub(start))
+
+	// a := make(chan int)
+	// b := make(chan int)
+
+	// close(a)
+
+	// select{
+	// case <-b:
+	// case <-a:
+	// }
+
+
+	// chanOwner := func() <-chan int {
+	// 	resultStream := make(chan int, 5)
+		
+	// 	go func() {
+	// 		defer close(resultStream)
+	// 		for i := 0; i < 5; i++ {
+	// 			resultStream <- i
+	// 		}
+	// 	}()
+
+	// 	return resultStream
+	// }
+
+	// resultStream := chanOwner()
+
+	// for result := range resultStream {
+	// 	fmt.Printf("Recieved: %v\n", result)
+	// }
+
+	// fmt.Println("Done")
+
+	// ch := make(chan int, 5)
+
+	// go func() {
+	// 	defer fmt.Println("Close")
+	// 	defer close(ch)
+	// 	for i := 0; i < 5; i++ {
+	// 		fmt.Printf("Writing to channel: %v\n", i)
+	// 		ch <- i
+	// 	}
+	// }()
+
+	// for integer := range ch {
+	// 	time.Sleep(1 * time.Second)
+	// 	fmt.Printf("reading to channel: %v\n", integer)
+	// }
+
+	// begin := make(chan interface{})
+
+	// var wg sync.WaitGroup
+
+	// for i := 0; i < 5; i++ {
+	// 	wg.Add(1)
+	// 	fmt.Printf("Start goroutine %d\n", i)
+
+	// 	go func(i int) {
+	// 		defer wg.Done()
+
+	// 		<-begin
+	// 		fmt.Printf("%d has begin\n", i)
+	// 	}(i)
+	// }
+
+	// fmt.Println("Unbloking goroutine!")
+
+	// close(begin)
+
+	// wg.Wait()
+
+	// ch := make(chan int)
+
+	// go func() {
+	// 	defer close(ch)
+
+	// 	for i := 0; i < 10; i++ {
+	// 		ch <- i
+	// 	}
+	// }()
+
+	// for integer := range ch {
+	// 	fmt.Println(integer)
+	// }
+
+	// ch := make(chan string)
+
+	// go func() {
+	// 	// time.Sleep(2 * time.Second)
+	// 	ch <- "Hello"
+	// }()
+
+	// v, ok := <-ch
+	// fmt.Println(v, ok)
+	// close(ch)
+
+	// v, ok = <-ch
+	// fmt.Println(v, ok)
+
+	// fmt.Println(<-ch)
+
+	// var count int64
+
+	// increment := func() {
+	// 	atomic.AddInt64(&count, 1)
+	// }
+
+	// increment()
+	// fmt.Println(count)
+
+	// var count int
+	// var mu sync.Mutex
+
+	// increment := func() {
+	// 	mu.Lock()
+	// 	count++
+	// 	mu.Unlock()
+	// }
+
+	// increment()
+
+	// fmt.Println(count)
+
+	// smap := &sync.Map{}
+
+	// smap.Store("Hello", "World")
+	// smap.Store(1, 2)
+
+	// smap.Range(func(key, value interface{}) bool{
+	// 	fmt.Println(key, value)
+	// 	return true
+	// })
+
+	// smap.Delete(1)
+
+	// smap.Range(func(key, value interface{}) bool{
+	// 	fmt.Println(key, value)
+	// 	return true
+	// })
+	
+	// v, ok := smap.Load("Hello")
+	// if ok {
+	// 	fmt.Println(v)
+	// }
+
+	// smap.LoadOrStore("Hello", "Woooooorld")
+	// smap.LoadOrStore(2, 3)
+
+	// smap.Range(func(key, value interface{}) bool{
+	// 	fmt.Println(key, value)
+	// 	return true
+	// })
 
 	// var wg sync.WaitGroup
 	// m := map[string]int{"A": 0, "B": 1}

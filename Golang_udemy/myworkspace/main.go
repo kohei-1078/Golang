@@ -20,15 +20,29 @@ func sub(x, y int) int {
 }
 
 func printGoodMorning() {
-	fmt.Println("Good Morning")
+	fmt.Println(time.Now(), ": Good Morning")
 }
 
 func printHello() {
-	fmt.Println("Hello")
+	fmt.Println(time.Now(), ": Hello")
 }
 
 func printGoodEvening() {
-	fmt.Println("Good Evening")
+	fmt.Println(time.Now(), ": Good Evening")
+}
+
+func Say(ch1 chan int) {
+	time.Sleep(10 * time.Second)
+	x := <-ch1
+	switch {
+	case x == 1:
+		printGoodMorning()
+	case x == 2:
+		printHello()
+	case x == 3:
+		printGoodEvening()
+	default:
+	}
 }
 
 func main() {
@@ -48,27 +62,11 @@ func main() {
 			ch1 <- message
 			if err != nil {
 				log.Println(err)
-			}// else {
-			// 	fmt.Printf("%v\n%T\n", message, message)
-			// }
-		}()
-
-		go func() {
-			time.Sleep(10 * time.Second)
-			x := <-ch1
-			// fmt.Println(x)
-			switch {
-			case x == 1:
-				printGoodMorning()
-			case x == 2:
-				printHello()
-			case x == 3:
-				printGoodEvening()
-			default:
-				fmt.Println("No input")
 			}
 		}()
-
+		
+		go Say(ch1)
+		go Say(ch1)
 	}
 	// fmt.Println("Hello World!")
 	// fmt.Println(add(1,2))
